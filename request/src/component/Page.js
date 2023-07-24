@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react'
-
+import Menu from './Menu'
 import '../css/page.scss'
 
 const Page = () => {
 
   const url = "https://api-jobtest.json2bot.chat/test"
   const [data, setData] = useState([])
+  const [menu1, setMenu1] = useState(true);
+  const [menu2, setMenu2] = useState(true);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -26,9 +29,21 @@ const Page = () => {
       <div className='page_wrap'>
           <div className='left_wrap'>
               {console.log(data)}
+              <ul onClick={() => {
+                setMenu1(!menu1)
+              }}>
+                <Menu items={["소제목", "소제목"]}></Menu>
+              </ul>
+              <ul onClick={() => {
+                setMenu2(!menu2)
+              }}>
+                <li>대분류</li>
+                <li>소분류</li>
+                <li>소분류</li>
+              </ul>
           </div>
           <div className='right_wrap'>
-          https://velog.io/@runprogrmm/React%EB%A1%9C-%EB%93%9C%EB%A1%AD%EB%8B%A4%EC%9A%B4-%EB%A9%94%EB%89%B4-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0
+          
           </div>
       </div>
     )

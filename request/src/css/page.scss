@@ -4,12 +4,24 @@
 }
 
 .left_wrap {
-    width: 33%;
-    height: 100%;
+    width: 15%;
+    height: 100vh;
     background-color: #E0E4E8;
+    padding: 5%;
+    ul {
+        font-size: 1.375rem;
+        padding: 1%;
+        li:not(:nth-child(1)) {
+            padding: 2%;
+            margin-left: 7%;
+            color: #777;
+            &.active {
+                color: #333;
+            }
+        }
+    }
 }
 
 .right_wrap {
-    width: 70%;
-    height: 100%;
+    width: 75%;
 }

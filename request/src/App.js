@@ -1,3 +1,5 @@
+import './css/common.scss'
+
 import './App.css';
 import Page from './component/Page'
 
