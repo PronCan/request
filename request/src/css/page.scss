@@ -1,6 +1,8 @@
 .page_wrap {
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: row;
 }
 
 .left_wrap {
@@ -11,7 +13,7 @@
     ul {
         font-size: 1.375rem;
         padding: 1%;
-        li:not(:nth-child(1)) {
+        li {
             padding: 2%;
             margin-left: 7%;
             color: #777;
@@ -24,4 +26,5 @@
 
 .right_wrap {
     width: 75%;
+    padding: 5%;
 }

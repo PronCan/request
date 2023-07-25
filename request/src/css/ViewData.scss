@@ -1,0 +1,15 @@
+.info_warp {
+    width: 100%;
+    border-top: 1px solid #E0E4E8;
+    border-bottom: 1px solid #E0E4E8;
+    ul {
+        display: flex;
+        li {
+            padding: 1%;
+            &:first-child {
+                width: 20%;
+            }
+        }
+    }
+}
+
