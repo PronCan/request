@@ -1,15 +1,32 @@
 .info_warp {
     width: 100%;
     border-top: 1px solid #E0E4E8;
-    border-bottom: 1px solid #E0E4E8;
+    
+    input[type=submit] {
+        margin-top: 30px;
+        float: right;
+    }
     ul {
         display: flex;
         li {
             padding: 1%;
+            width: 70%;
             &:first-child {
                 width: 20%;
             }
         }
+        
     }
+}
+
+.input-radio-list {
+    width: 100%;
+    label {
+        margin-right: 10%;
+    }
+}
+
+.caution-red {
+    color: #F03738;
 }
 

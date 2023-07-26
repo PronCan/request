@@ -30,7 +30,7 @@ const Page = () => {
               <AccordionMenu />
           </div>
           <div className='right_wrap'>
-              <ViewData/>
+              <ViewData data={data}/>
           </div>
       </div>
     )
