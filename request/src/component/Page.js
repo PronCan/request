@@ -7,6 +7,7 @@ const Page = () => {
 
   const url = "https://api-jobtest.json2bot.chat/test"
   const [data, setData] = useState([])
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -14,14 +15,16 @@ const Page = () => {
         const res = await fetch(url)
         const _data = await res.json()
         setData(_data.data)
+        setLoading(false);
       } catch(error) {
         console.log("Err", error)
+        setLoading(false);
       }
     }
     fetchData();
   }, [])
 
-  if(!data) {
+  if(loading) {
     return <div>Wait</div>
   } else {
     return (
@@ -30,7 +33,7 @@ const Page = () => {
               <AccordionMenu />
           </div>
           <div className='right_wrap'>
-              <ViewData data={data}/>
+              <ViewData data={data} date={data.date}/>
           </div>
       </div>
     )
