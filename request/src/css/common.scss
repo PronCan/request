@@ -68,3 +68,25 @@ input[type=radio]:hover {
 input[type=radio]:checked {
     border: 5px solid #024EEE;
 }
+
+input[type=checkbox] {
+    vertical-align: middle;
+    appearance: none;
+    border: 2px solid #BEBEBE; 
+    border-radius: 5px;
+    width: 16px;
+    height: 16px;
+}
+
+input[type=checkbox]:hover {
+    background-color: #F6F7F8;
+}
+
+input[type=checkbox]:checked {
+    border: 2px solid #024EEE;
+    background-color: #024EEE;
+    background-image: url('../img/Vector.png');
+    background-size: 80% 70%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
