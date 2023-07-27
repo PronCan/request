@@ -103,7 +103,7 @@ const ViewData = ({data, date}) => {
                             </label>
                         </div>
                         {
-                            if(radioState === '선택3')? return <p className='caution-red'>* 선택시 텍스트가 표시됩니다</p> : ''
+                            (radioState === '선택3')? <p className='caution-red'>* 선택시 텍스트가 표시됩니다</p> : ''
                         }
                     </li>
                 </ul>
