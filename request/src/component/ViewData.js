@@ -13,7 +13,6 @@ const ViewData = ({data, date}) => {
     const dateStr = date  // '2013-12-20' // string type
     const info5 = _data.info5;
     const info6 = [..._data.info6];
-    console.log(info6)
     const option = ['선택1', '선택2', '선택3']
 
     const [selectedDate, setSelectedDate] = useState(null)
@@ -24,6 +23,7 @@ const ViewData = ({data, date}) => {
         setSelectedDate(convertDate(dateStr))
         setRadioState(info5)
         setCheckboxState(info6)
+        console.log(info6)
     }, [])
 
     const handleSelectDate = (e) => {
@@ -37,12 +37,13 @@ const ViewData = ({data, date}) => {
     }
 
     const handleCheckBtn = (e) => {
-        console.log('handleCheckBtn', e.target.value);
+        // console.log('handleCheckBtn', e.target.value);
         if(checkboxState.includes(e.target.value)) {
             setCheckboxState(checkboxState.filter((item) => item !== e.target.value))
         } else {
             setCheckboxState([...checkboxState, e.target.value])
         }
+        
     }
 
     function getInfoData(str) {
@@ -125,18 +126,13 @@ const ViewData = ({data, date}) => {
                     <li>정보6</li>
                     <li>
                         <div className='input-checkbox-list'>
-                                <label>
-                                    <input type='checkbox' name='info6' value={'선택1'} checked={0} onChange={() => handleCheckBtn}/>
-                                    선택1
-                                </label>
-                                <label>
-                                    <input type='checkbox' name='info6' value={'선택2'} checked={1} onChange={() => handleCheckBtn}/>
-                                    선택2
-                                </label>
                             {
-                                option.map((arr) => {
-                                    <p>{arr}</p>
-                                })
+                                option.map((arr, index) => (
+                                    <label key={index}>
+                                        <input type='checkbox'  name='info6' value={arr} checked={checkboxState.includes(arr)?arr:''} onChange={handleCheckBtn}/>
+                                        {arr}
+                                    </label>
+                                ))
                             }
                         </div>
                     </li>
