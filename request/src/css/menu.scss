@@ -1,23 +1,63 @@
 .accordion-menu {
-    display: flex;
-    flex-direction: column;
+  width: 100%;
+}
+
+.menu-item {
+  // background-color: #f0f0f0;
+  padding: 10px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+}
+
+.menu-title {
+  font-weight: bold;
+  position: relative;
+  &::after {
+    content: '';
+    display: block;
+    width: 18px;
+    height: 18px;
+    background-image: url('../img/gnb_fold_active.png');
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 90%;
+    transform: translate(-50%, -50%);
   }
-  
-  .menu-item {
-    cursor: pointer;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
+}
+
+.menu-item.active .menu-title {
+  position: relative;
+  &::after {
+    content: '';
+    display: block;
+    width: 18px;
+    height: 18px;
+    background-image: url('../img/gnb_unfold_active.png');
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 90%;
+    transform: translate(-50%, -50%);
   }
-  
-  .menu-item.active {
-    background-color: #f0f0f0;
-  }
-  
-  .menu-title {
-    font-weight: bold;
-  }
-  
-  .menu-content {
-    padding: 10px;
-  }
-  
+}
+
+.menu-item.active {
+  background-color: #ccc;
+}
+
+.sub-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sub-menu li {
+  cursor: pointer;
+  padding: 5px;
+}
+
+.sub-menu li.active {
+  background-color: #f5f5f5;
+}

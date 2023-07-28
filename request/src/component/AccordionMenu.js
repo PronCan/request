@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../css/AccordionMenu.scss';
+import '../css/menu.scss';
 
 const AccordionMenu = () => {
   const menuItems = [
@@ -47,7 +47,7 @@ const AccordionMenu = () => {
               {content && (
                 <ul className="sub-menu">
                   {content.map(({ id, title }) => (
-                    <li key={id} onClick={handleSubItemClick}>
+                    <li className='active' key={id} onClick={handleSubItemClick}>
                       {title}
                     </li>
                   ))}
