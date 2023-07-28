@@ -13,6 +13,9 @@ const Page = () => {
     const fetchData = async () => {
       try {
         const res = await fetch(url)
+        if(!res.ok) { //  400 || 500 (not 200~299)
+          alert('500 또는 400 에러가 발생하였습니다.')
+        }
         const _data = await res.json()
         setData(_data.data)
         setLoading(false);
@@ -25,7 +28,7 @@ const Page = () => {
   }, [])
 
   if(loading) {
-    return <div>Wait</div>
+    return (<div>Loading</div>)
   } else {
     return (
       <div className='page_wrap'>

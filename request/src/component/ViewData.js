@@ -23,7 +23,7 @@ const ViewData = ({data, date}) => {
         setSelectedDate(convertDate(dateStr))
         setRadioState(info5)
         setCheckboxState(info6)
-        console.log(info6)
+        // console.log(info6)
     }, [])
 
     const handleSelectDate = (e) => {
@@ -62,7 +62,6 @@ const ViewData = ({data, date}) => {
         return new Date(year, month-1, day)
     }
 
-    if(!dateStr) return (<div>loading</div>)
     return (
         <div>
             <h1>타이틀</h1>
